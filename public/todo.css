@@ -1,0 +1,17 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#content {
+	width: 100%;
+	height: calc(100% - 1px);
+	background-color: #ff0000;
+}
+
+.monacoEditor {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: calc(100% - 31px);
+}
