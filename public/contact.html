@@ -1,21 +1,75 @@
 <html>
 <head>
 <link rel="stylesheet" href="contact.css">
-<script src="script.js" charset="utf-8"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="icon.png">
 </head>
 <body>
 	<div id="content">
-		<img src="img/car10:3_filtered.JPG", width="100%">
-		<ul>
-			<li>email &ensp;: <a href="mailto:chasekozol@protonmail.com">chasekozol@protonmail.com</a></li>
-			<li>phone &ensp;: <a href="sms:9713357470">(971)-335-7470</a></li>
-			<li>github&ensp;: <a href="https://github.com/chskzl">chskzl</a></li>
-			<li>steam &ensp;: <a href="https://steamcommunity.com/id/mrrxgers/">mrrxgers</a></li>
-			<li>insta &ensp;: <a href="https://instagram.com/mrrxgers/">mrrxgers</a></li>
-		</ul>
+		<div id='profile' class="panel">
+			<div class="profile-panel"><img id='avatar' src="img/avatar.png" alt=""></div>
+			<div class="profile-panel"><ul>
+				<li>chase kozol</li>
+				<li><a href="mailto:chasekozol@protonmail.com">chasekozol@protonmail.com</a></li>
+				<li><a href="sms:9713357470">(971)-335-7470</a></li>
+			</ul></div>
+		</div>
+		<div id='links' class="panel">
+			<div class="link-panel"><div><p>links:</p></div></div>
+			<div id='separator'></div>
+			<div class="link-panel"><ul>
+				<li><a href="https://github.com/chskzl">github</a></li>
+				<li><a href="">linkdin</a></li>
+				<li><a href="https://steamcommunity.com/id/mrrxgers/">steam</a></li>
+			</ul></div>
+		</div>
+		<div id='form' class="panel">
+			<form>
+				<label for="name">Name:</label><br>
+				<input type="text" id="formName" name="name"><br>
+				<label for="email">Email Address:</label><br>
+				<input type="text" id="formEmail" name="email"><br>
+				<label for="message">Message</label><br>
+				<textarea type="text" id="formMessage" name="message"></textarea><br>
+				<input type="submit" value="Send Message" id="formSubmit">
+			</form>
+		</div>
 	</div>
 </body>
+
+<script>
+
+window.addEventListener('DOMContentLoaded', function () {
+	var submitButton = document.getElementById("formSubmit");
+    if (submitButton) {
+        submitButton.addEventListener('click', submitMessage);
+    }
+});
+
+function submitMessage() {
+	var name = document.getElementById("formName").value;
+	var email = document.getElementById("formEmail").value;
+	var message = document.getElementById("formMessage").value;
+
+	var formData = {
+		name: name,
+		email: email,
+		message: message
+	}
+
+	var requestData = JSON.stringify(formData);
+    var request = new XMLHttpRequest();
+
+    request.open('POST', '/send-message');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.addEventListener('load', function (event) {
+        if (event.target.status !== 200) {
+            alert("Something went wrong sending your message.");
+        }
+    });
+    request.send(requestData);
+}
+
+</script>
 </html>
