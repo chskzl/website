@@ -6,7 +6,7 @@ body {
 #content {
 	width: 100%;
 	height: calc(100% - 1px);
-	background-color: #ff0000;
+	background-color: #000000;
 }
 
 .monacoEditor {

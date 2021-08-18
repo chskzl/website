@@ -1,15 +1,14 @@
 const path = require('path/posix');
 
 var router = require('express').Router();
+var photoData = require('../../photoData');
+var stylesheet = 'photos.css';
+var script = '';
 
 router.get('/photos', function(req, res) {
-    res.sendFile('photos.html', {root: path.join(__dirname, '../')}, function (err) {
-        if (err) {
-          console.log('error')
-        } else {
-          console.log('bruh')
-        }
-    })
+    var listURL = [{name: 'photos', url: '/photos'}]
+    res.status(200);
+    res.render('photos', {photosArray: photoData, listURL: listURL, stylesheet: stylesheet, script: script});
 });
 
 module.exports = router;

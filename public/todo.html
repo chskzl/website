@@ -11,27 +11,54 @@
 <body>
 	<div id="content">
 		<div class='monacoEditor' id='input'></div>
+        <button id="saveButton">Save</button>
 	</div>
 </body>
 
 <script>
-    var require = { paths: { vs: 'vs' } };
-    var webassemblyEditor = monaco.editor.create(document.getElementById('input'), {
-        minimap: {
-            enabled: false
-        },
-        wordWrap: 'on',
-        lineNumbers: 'off',
-        folding: false,
-        lineDecorationsWidth: 5,
-        theme: 'vs-dark',
-        automaticLayout: true,
-        value: [
-            'todo list',
-			'1. Eat ass'
-        ].join('\n'),
-        language: 'c'
-    });
+
+    window.onload = async function() {
+        var todoList = "";
+
+        await fetch('http://localhost/todo/list')
+        .then(response => response.text())
+        .then((data) => {
+            todoList = data;
+        })
+
+        var require = { paths: { vs: 'vs' } };
+        var todoEditor = monaco.editor.create(document.getElementById('input'), {
+            minimap: {
+                enabled: false
+            },
+            wordWrap: 'on',
+            lineNumbers: 'off',
+            folding: false,
+            lineDecorationsWidth: 5,
+            theme: 'vs-dark',
+            automaticLayout: true,
+            value: todoList,
+            language: 'c'
+        });
+
+        var saveButton = document.getElementById("saveButton");
+        saveButton.onclick = function() {
+            let text = JSON.stringify({
+                text: todoEditor.getValue()
+            })
+
+            fetch("/save-todo", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: text,
+                })
+                .then(response => response.json())
+        }
+
+    }
 
 </script>
 

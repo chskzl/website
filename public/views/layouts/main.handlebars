@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel='stylesheet' href='/styles/{{stylesheet}}'>
+<script src="/scripts/{{script}}" charset="utf-8"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="/img/icon.png">
+</head>
+<body>
+	<h1>
+		<a href='/'>home</a>{{#each listURL}} > <a href="{{url}}">{{name}}</a>{{/each}}
+	</h1>
+
+	{{{ body }}}
+</body>
+</html>

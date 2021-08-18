@@ -1,13 +1,13 @@
 const path = require('path/posix');
 
 var router = require('express').Router();
+var stylesheet = 'contact.css';
+var script = 'contact.js';
 
 router.get('/contact', function(req, res) {
-    res.sendFile('contact.html', {root: path.join(__dirname, '../')}, function (err) {
-        if (err) {
-          console.log('error')
-        }
-    })
+    var listURL = [{name: 'contact', url: '/contact'}]
+    res.status(200);
+    res.render('contact', {listURL: listURL, stylesheet: stylesheet, script: script});
 });
 
 module.exports = router;

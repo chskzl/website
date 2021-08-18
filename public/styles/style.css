@@ -19,25 +19,25 @@ body {
 }
 
 #photos {
-	background: url(img/photos-bg.JPG) no-repeat top left fixed;
+	background: url(../img/photos-bg.JPG) no-repeat top left fixed;
 	width: 50%;
 	height: 50%;
 }
 
 #projects {
-	background: url(img/projects-bg.JPG) no-repeat top right fixed;
+	background: url(../img/projects-bg.JPG) no-repeat top right fixed;
 	width: 50%;
 	height: 50%;
 }
 
 #contact {
-	background: url(img/contact-bg.JPG) no-repeat bottom left fixed;
+	background: url(../img/contact-bg.JPG) no-repeat bottom left fixed;
 	width: 50%;
 	height: 50%;
 }
 
 #cv {
-	background: url(img/cv-bg.JPG) no-repeat bottom right fixed;
+	background: url(../img/cv-bg.JPG) no-repeat bottom right fixed;
 	width: 50%;
 	height: 50%;
 }

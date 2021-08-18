@@ -1,0 +1,10 @@
+<main>
+	<div id='content'>
+		{{#each photosArray}}
+			<div class='photo-container'>
+				<img src="/media/thumbnails/{{filename}}" alt="{{title}}" width="200px">
+				<p>{{date}}</p>
+			</div>
+		{{/each}}
+	</div>
+</main>

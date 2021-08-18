@@ -1,11 +1,15 @@
 var express = require('express');
 var app = express();
-app.disable('x-powered-by');
+var exphbs = require('express-handlebars');
 
 
 app.use(express.json());
 
 app.locals.basedir = '/home/chase/Documents/website/public';
+var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+app.set('views', __dirname + '/public/views');
 
 app.use(express.static('public'));
 
