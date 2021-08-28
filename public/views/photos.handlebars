@@ -2,7 +2,7 @@
 	<div id='content'>
 		{{#each photosArray}}
 			<div class='photo-container'>
-				<img src="/media/thumbnails/{{filename}}" alt="{{title}}" width="200px">
+				<a href='/photos/{{@index}}'><img src="/media/thumbnails/{{filename}}" alt="{{title}}" width="200px"></a>
 				<p>{{date}}</p>
 			</div>
 		{{/each}}
