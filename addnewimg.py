@@ -15,11 +15,14 @@ for filename in os.listdir(directory):
 
 	title = ""
 	date = img_exif[306]
+	year = date[0:4]
+	month = date[5:7]
+	day = date[8:10]
 
 	data.append({
 		"filename": filename,
 		"title": title,
-		"date": date
+		"date": year + '.' + month + '.' + day
 	})
 
 	os.system('rm ' + directory + '/' + filename)

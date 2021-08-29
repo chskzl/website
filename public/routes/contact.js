@@ -1,4 +1,4 @@
-const path = require('path/posix');
+const path = require('path');
 
 var router = require('express').Router();
 var stylesheet = 'contact.css';

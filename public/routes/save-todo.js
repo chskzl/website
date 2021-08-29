@@ -1,4 +1,4 @@
-const path = require('path/posix');
+const path = require('path');
 var router = require('express').Router();
 const { v4 } = require('uuid');
 fs = require('fs');
