@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chskzl/website.git"
+  },
+  "author": "Chase Kozol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chskzl/website/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "path": "^0.12.7",
+    "require-dir": "^1.2.0",
+    "uuid": "^8.3.2"
+  }
+}
