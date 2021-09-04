@@ -18,32 +18,35 @@ body {
 	text-decoration: none;
 }
 
+.panel-img {
+	position: fixed;
+	z-index: -1;
+	object-fit: contain;
+}
+
 #photos {
-	background: url(../img/photos-bg.JPG) no-repeat top left fixed;
 	width: 50%;
 	height: 50%;
 }
 
 #projects {
-	background: url(../img/projects-bg.JPG) no-repeat top right fixed;
 	width: 50%;
 	height: 50%;
 }
 
 #contact {
-	background: url(../img/contact-bg.JPG) no-repeat bottom left fixed;
 	width: 50%;
 	height: 50%;
 }
 
 #cv {
-	background: url(../img/cv-bg.JPG) no-repeat bottom right fixed;
 	width: 50%;
 	height: 50%;
 }
 
 .panel {
-	background-color: rgba(32, 32, 32, 0.5);
+	position: relative;
+	z-index: 1;
 	width: 100%;
 	height: 100%;
 	margin: auto;
@@ -66,4 +69,16 @@ body {
 .panel-label h {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+.film {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(32, 32, 32, 0.4);
+}
+
+.film:hover {
+	background-color: rgba(32, 32, 32, 0.0);
 }
