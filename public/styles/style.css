@@ -24,25 +24,50 @@ body {
 	object-fit: contain;
 }
 
-#photos {
-	width: 50%;
-	height: 50%;
+@media screen and (min-aspect-ratio: 1/1) {
+	#photos {
+		width: 50%;
+		height: 50%;
+	}
+	
+	#projects {
+		width: 50%;
+		height: 50%;
+	}
+	
+	#contact {
+		width: 50%;
+		height: 50%;
+	}
+	
+	#cv {
+		width: 50%;
+		height: 50%;
+	}
 }
 
-#projects {
-	width: 50%;
-	height: 50%;
+@media screen and (max-aspect-ratio: 1/1) {
+	#photos {
+		width: 100%;
+		height: 25%;
+	}
+	
+	#projects {
+		width: 100%;
+		height: 25%;
+	}
+	
+	#contact {
+		width: 100%;
+		height: 25%;
+	}
+	
+	#cv {
+		width: 100%;
+		height: 25%;
+	}
 }
 
-#contact {
-	width: 50%;
-	height: 50%;
-}
-
-#cv {
-	width: 50%;
-	height: 50%;
-}
 
 .panel {
 	position: relative;

@@ -21,13 +21,24 @@ a:hover {
 	color: rgb(128, 128, 128);
 }
 
-#content {
-	max-width: 90%;
-	min-width: 60%;
-	margin: auto;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+@media screen and (min-width: 864px) {
+	#content {
+		width: 800px;
+		margin-left: 64px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 865px) {
+	#content {
+		width: 95%;
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 }
 
 #postTitle {
@@ -37,7 +48,7 @@ a:hover {
 }
 
 #photoContainer {
-	max-width: 60%;
+	max-width: 100%;
 	margin-top: 16px;
 	padding: 16px;
 	border: 1px solid #fff;
