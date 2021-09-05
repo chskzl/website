@@ -6,7 +6,7 @@ var script = '';
 
 router.get('/photos', function(req, res) {
     var listURL = [{name: 'photos', url: '/photos'}]
-    var sql = 'SELECT filename, title, to_char(date, \'YYYY.MM.DD\') AS date FROM images';
+    var sql = 'SELECT filename, title, to_char(date, \'YYYY.MM.DD\') AS date FROM images ORDER BY date DESC;';
     db.query(sql, (err, data) => {
         if (err) {
             console.error(err);

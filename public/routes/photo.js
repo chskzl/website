@@ -1,13 +1,12 @@
 const path = require('path');
 var db = require('../../database')
 var router = require('express').Router();
-var photoData = require('../../photoData');
 var stylesheet = 'photo.css';
 var script = '';
 
 router.get('/photos/:n', function(req, res) {
     var n = req.params.n;
-    var sql = 'SELECT filename, title, to_char(date, \'YYYY.MM.DD\') AS date FROM images';
+    var sql = 'SELECT filename, title, to_char(date, \'YYYY.MM.DD\') AS date FROM images ORDER BY date DESC;';
     db.query(sql, (err, data) => {
         if (err) {
             console.error(err);

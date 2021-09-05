@@ -1,11 +1,18 @@
 import os
-import json
+import psycopg2
 from PIL import Image, ExifTags
 
 directory = 'newimg'
 
-json_file = open("photoData.json", "r+")
-data = json.load(json_file)
+conn = psycopg2.connect(
+	host="localhost",
+	dbname="imagedata",
+	user="postgres",
+	password="postgres",
+	port="5432"
+)
+
+cur = conn.cursor()
 
 for filename in os.listdir(directory):
 	os.system('cp ' + directory + '/' + filename + ' public/media/' + filename)
@@ -19,15 +26,16 @@ for filename in os.listdir(directory):
 	month = date[5:7]
 	day = date[8:10]
 
-	data.append({
-		"filename": filename,
-		"title": title,
-		"date": year + '.' + month + '.' + day
-	})
+	date = year + '-' + month + '-' + day
+
+	print('Enter title for file ' + filename)
+	title = raw_input()
+
+	query = 'INSERT INTO images (filename, title, date) VALUES (%s, %s, %s);'
+	cur.execute(query, (filename, title, date))
 
 	os.system('rm ' + directory + '/' + filename)
 
-
-
-json_file.seek(0)
-json.dump(data, json_file, indent=4)
+cur.close()
+conn.commit()
+conn.close()
