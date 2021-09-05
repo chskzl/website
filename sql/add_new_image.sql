@@ -1,0 +1,1 @@
+INSERT INTO images (filename, title, date) VALUES (%s, %s, %s);

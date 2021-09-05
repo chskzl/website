@@ -1,0 +1,1 @@
+SELECT filename, title, to_char(date, 'YYYY:MM:DD') AS date FROM images ORDER BY date DESC
