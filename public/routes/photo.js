@@ -2,7 +2,7 @@ const path = require('path');
 var db = require('../../database')
 var router = require('express').Router();
 var stylesheet = 'photo.css';
-var script = '';
+var script = 'photo.js';
 
 router.get('/photos/:n', function(req, res) {
     var n = req.params.n;
