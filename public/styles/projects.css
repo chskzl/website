@@ -1,0 +1,78 @@
+body {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: 'IBM Plex Mono', monospace;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	margin-left: 16px;
+	font-weight: lighter;
+	font-style: normal;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#content {
+	width: clamp(80%, 1200px, 90%);
+	margin: auto;
+}
+
+.even {
+	text-align: right;
+}
+
+a:hover {
+	color: rgb(128, 128, 128);
+}
+
+.project {
+	display: flex;
+	margin: 20px;
+	text-align: right;
+}
+
+.left-justify {
+	text-align: left;
+}
+
+.text-container {
+	width: 50%;
+}
+
+.text-container a {
+	font-style: italic;
+}
+
+.demo {
+	margin: 20px;
+	object-fit: contain;
+}
+
+#wasmfiddle-demo {
+	width: calc(50% - 40px);
+}
+
+#jos-demo {
+	width: calc(50% - 40px);
+}
+
+#wasteagram-demo {
+	width: 20%;
+}
+
+#website-demo {
+	width: calc(50% - 40px);
+}
+
+.tags {
+	font-size: small;
+}
+
+.arrow {
+	font-size: x-large;
+}
