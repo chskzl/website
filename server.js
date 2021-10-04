@@ -30,6 +30,8 @@ app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/public/views');
 
 app.use(express.static('public'));
+// need this to parse json in body of contact post request
+app.use(express.json());
 
 // routes
 var routes = require('require-dir')('public/routes');
