@@ -3,7 +3,31 @@
 		<div class='photo-container'>
 			<h3 id='postTitle'>{{title}}</h3>
 			<p id='postDate'>{{date}}</p>
-			<div id='photoContainer'><img src="/media/{{filename}}" alt="{{filename}}"></div>
+			<div id='photoContainer'>
+				<img id='photo' src="/media/{{filename}}" alt="{{filename}}">
+			</div>
+			<div id="potionContainer">
+				<div id='container'>
+					<svg width="200" height="200" viewBox="0 0 200 200" xml:space="preserve">
+						<g transform="matrix(1 0 0 1 0 0)">
+						<path style="stroke: rgb(0,0,0); stroke-width: 0;
+						stroke-dasharray: none; stroke-linecap: butt; 
+						stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; 
+						fill: #742091; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  
+						transform=" translate(0, 0)" d="M 120 60 L 120 80 L 155 150 Q 160 160 150 160 L 50 160 Q 40 160 45 150 L 80 80 L 80 60 " stroke-linecap="round" />
+						<path style="stroke: #B5F0E8; stroke-width: 2;
+						stroke-dasharray: none; stroke-linecap: butt; 
+						stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; 
+						fill: none; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  
+						transform=" translate(0, 0)" d="M 120 40 A 1 1 90 1 1 120 45 L 120 80 L 155 150 Q 160 160 150 160 L 50 160 Q 40 160 45 150 L 80 80 L 80 45 A 1 1 90 1 1 80 40 L 120 40 M 80 45 L 120 45 " stroke-linecap="round" />
+						</g>
+					</svg>
+					<div class="bubble" id="bubble1"></div>
+					<div class="bubble" id="bubble2"></div>
+					<div class="bubble" id="bubble3"></div>
+					<div class="bubble" id="bubble4"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 </main>
